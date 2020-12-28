@@ -1,0 +1,31 @@
+{
+  "schemaVersion": 1,
+  "id": "signretain",
+  "version": "${version}",
+  "name": "Sign Retain",
+  "description": "Signs retain text on break",
+  "authors": [
+    "umollu"
+  ],
+  "contact": {
+    "homepage": "https://umollu.com/",
+    "sources": "https://github.com/umollu/sign-retain",
+    "issues": "https://github.com/umollu/sign-retain/issues"
+  },
+  "license": "MIT",
+  "icon": "assets/signretain/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "com.umollu.signretain.SignRetainMod"
+    ]
+  },
+  "mixins": [
+    "signretain.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  }
+}

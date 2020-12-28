@@ -1,0 +1,13 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "com.umollu.signretain.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "mixins": [
+    "AbstractSignBlockMixin",
+    "SignItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
