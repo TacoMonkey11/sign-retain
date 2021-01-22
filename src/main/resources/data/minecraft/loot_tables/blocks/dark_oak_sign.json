@@ -13,6 +13,11 @@
               "source": "block_entity",
               "ops": [
                 {
+                  "source": "Color",
+                  "target": "Retained.Color",
+                  "op": "replace"
+                },
+                {
                   "source": "Text1",
                   "target": "Retained.Text1",
                   "op": "replace"

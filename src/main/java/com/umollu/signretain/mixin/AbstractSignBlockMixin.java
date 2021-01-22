@@ -9,6 +9,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.text.Text;
+import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
@@ -33,6 +34,7 @@ public abstract class AbstractSignBlockMixin extends BlockWithEntity {
                     Text text = Text.Serializer.fromJson(string.isEmpty() ? "\"\"" : string);
                     ((SignBlockEntity) blockEntity).setTextOnRow(i, text);
                 }
+                ((SignBlockEntity) blockEntity).setTextColor(DyeColor.byName(compoundTag2.getString("Color"), DyeColor.BLACK));
             }
         }
     }
