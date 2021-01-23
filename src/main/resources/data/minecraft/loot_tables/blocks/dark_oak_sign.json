@@ -43,6 +43,18 @@
                   "condition": "minecraft:sign_text"
                 }
               ]
+            },
+            {
+              "function": "minecraft:copy_state",
+              "block": "minecraft:dark_oak_sign",
+              "properties": [
+                "lit"
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:sign_text"
+                }
+              ]
             }
           ]
         }
