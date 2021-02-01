@@ -3,6 +3,7 @@ package com.umollu.signretain.loot.condition;
 import com.google.gson.JsonDeserializationContext;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonSerializationContext;
+import com.umollu.signretain.ISignBlockEntity;
 import net.minecraft.block.entity.SignBlockEntity;
 import net.minecraft.loot.condition.LootCondition;
 import net.minecraft.loot.condition.LootConditionType;
@@ -25,7 +26,7 @@ public class SignTextLootCondition implements LootCondition {
     public boolean test(LootContext lootContext) {
         SignBlockEntity signBlockEntity = (SignBlockEntity) lootContext.get(LootContextParameters.BLOCK_ENTITY);
         for(int i = 0; i < 4; i++) {
-            String string = signBlockEntity.getTextOnRow(i).getString();
+            String string = ((ISignBlockEntity)signBlockEntity).getTextOnRow(i).getString();
             if(!string.trim().isEmpty()) {
                 return true;
             }

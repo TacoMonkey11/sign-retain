@@ -1,5 +1,7 @@
 package com.umollu.signretain.mixin;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.client.item.TooltipContext;
@@ -33,6 +35,7 @@ public class SignItemMixin extends WallStandingBlockItem {
         }
     }
 
+    @Environment(EnvType.CLIENT)
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
         super.appendTooltip(stack, world, tooltip, context);
