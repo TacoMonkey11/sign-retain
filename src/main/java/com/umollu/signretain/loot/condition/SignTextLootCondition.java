@@ -25,7 +25,7 @@ public class SignTextLootCondition implements LootCondition {
     public boolean test(LootContext lootContext) {
         SignBlockEntity signBlockEntity = (SignBlockEntity) lootContext.get(LootContextParameters.BLOCK_ENTITY);
         for(int i = 0; i < 4; i++) {
-            String string = signBlockEntity.getTextOnRow(i).getString();
+            String string = signBlockEntity.getTextOnRow(i, false).getString();
             if(!string.trim().isEmpty()) {
                 return true;
             }

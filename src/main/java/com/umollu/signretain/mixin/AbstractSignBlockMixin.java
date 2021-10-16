@@ -7,7 +7,7 @@ import net.minecraft.block.entity.BlockEntity;
 import net.minecraft.block.entity.SignBlockEntity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.NbtCompound;
 import net.minecraft.text.Text;
 import net.minecraft.util.DyeColor;
 import net.minecraft.util.math.BlockPos;
@@ -24,9 +24,9 @@ public abstract class AbstractSignBlockMixin extends BlockWithEntity {
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         super.onPlaced(world, pos, state, placer, itemStack);
-        CompoundTag compoundTag = itemStack.getTag();
+        NbtCompound compoundTag = itemStack.getNbt();
         if (compoundTag != null && compoundTag.contains("Retained")) {
-            CompoundTag compoundTag2 = compoundTag.getCompound("Retained");
+            NbtCompound compoundTag2 = compoundTag.getCompound("Retained");
             BlockEntity blockEntity = world.getBlockEntity(pos);
             if (blockEntity instanceof SignBlockEntity) {
                 for(int i = 0; i < 4; ++i) {
